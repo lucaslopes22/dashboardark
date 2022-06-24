@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Dashboard
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="" type="image/x-icon" class="icon" />
+    <meta name="theme-color" content="#f1f2f6">
+    <meta name="msapplication-navbutton-color" content="#f1f2f6">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />
+    <meta property="og:keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />    
+    
+
+    <!-- CSS Computador -->
+    <link href="css/default-desktop.css" rel="stylesheet" type="text/css" media="screen and (min-width:1260px)">
+		
+	<!-- CSS Mobile -->
+    <link href="css/default-mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:1259px)">
+
+    <!-- Ícones BoxIcons -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="all-content">
+        <div class="content-left">
+
+            <!-- GRÁFICO LEVEL AGREEMENT-->
+            <div class="title-gray-medium">
+                Service Level Agreement
+            </div>
+
+            <div class="graphic-level-agreement">
+                <div class="details-graphic">
+                    <div class="number-graphic" data-number="80.50"></div>
+                    <div class="goal-graphic" data-goal="10.50"></div>
+                </div>
+                <div class="graphic">
+                    <div class="graphic-content">
+                        <svg>
+                            <circle cx="60" cy="60" r="60"></circle>
+                            <circle class="progress" cx="60" cy="60" r="60"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRÁFICO ACCEPTED-MISSED-->
+            <div class="graphics-accepted-missed">
+
+                <div class="title-gray-small">
+                    Accepted
+                </div>
+                <div class="graphics-bar-horizontal m-10">
+                    <div class="graphic-progress"></div>
+                    <div id="accepted" class="bar accepted"></div>
+                    <div class="number">
+                        <p data-value="1000"></p>
+                    </div>
+                </div>
+
+                <div class="title-gray-small m-10">
+                    Missed
+                </div>
+                <div class="graphics-bar-horizontal m-10">
+                    <div class="graphic-progress"></div>
+                    <div id="missed" class="bar missed"></div>
+                    <div class="number">
+                        <p data-value="500"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRÁFICO HANDLE RATE-->
+            <div>
+                <div class="title-gray-medium m-20">
+                    Handle Rate
+                </div>
+
+                <div class="graphic-donut-half">
+                    <div class="details-graphic">
+                        <div class="number-graphic m-40" data-number="75.98"></div>
+                        <div class="goal-graphic" data-goal="5.98"></div>
+                    </div>
+
+                    <div class="graphic">
+                        <div class="graphic-content">
+                            <svg>
+                                <circle cx="60" cy="60" r="60"></circle>
+                                <circle class="progress" cx="60" cy="60" r="60"></circle>
+                            </svg>
+                            <div class="graphic-indicator">
+                                <div class="empty"><p>0%</p></div>
+                                <div class="full">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box-up m-10">
+                <div class="queue-time">
+                    <div class="title-gray-small">  
+                        Avg. Queue Time
+                    </div>
+                    <div class="time-elapsed" data-time="00:00:08"></div>
+                    <div class="detail-time-elapsed" data-detail="-00:00:03"></div>
+                </div>
+
+                <div class="quickdrop">
+                    <div class="title-gray-small">
+                        Avg. Talktime
+                    </div>
+                    <div class="time-elapsed" data-time="00:01:54"></div>
+                    <div class="detail-time-elapsed" data-detail="+00:00:03"></div>
+                </div>
+            </div>
+
+            <div class="box-down m-10">
+                <div class="box">
+                    <div class="title-gray-small">
+                        Decline &lt; 20
+                    </div>
+                    <div class="time-elapsed" data-time="7"></div>
+                    <div class="detail-time-elapsed" data-detail="-4"></div>
+                </div>
+
+                <div class="box">
+                    <div class="title-gray-small">
+                        Answer &lt; 30
+                    </div>
+                    <div class="time-elapsed" data-time="21"></div>
+                    <div class="detail-time-elapsed" data-detail="+7"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-center">
+            <div class="title-gray-large text-content-center">
+                Dialogue Volume
+            </div>
+            <div class="graphic-bar">
+                <canvas id="bar-chart"></canvas>
+            </div>
+
+
+            <div class="content-center-down">
+                <div class="most-used">
+                    <div class="title-gray-large">
+                        The Most Used Skills
+                    </div>
+
+                    <div class="most-used-box m-10">
+                        <div class="number-indicator">
+                            1
+                        </div>
+
+                        <div class="graphic-circular">
+                            <div class="graphic">
+                                <svg>
+                                    <circle cx="30" cy="30" r="30"></circle>
+                                    <circle class="progress" cx="30" cy="30" r="30"></circle>
+                                </svg>
+                                <div class="number-percent" data-percent="75"></div>
+                            </div>
+                        </div>
+
+                        <div class="graphic-bar-horizontal">
+                            <div class="description m-5">
+                                <div class="description-content">
+                                    <i class="bx bx-shape-circle"></i>
+                                    <p>Marketing</p>
+                                </div>
+                                <div class="description-content">
+                                    <i class="bx bx-analyse"></i>
+                                    <p>Analysis</p>
+                                </div>
+                            </div>
+
+                            <div class="title-gray-small">
+                                Accepted
+                            </div>
+
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar accepted"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="1000"></p>
+                                </div>
+                            </div>
+                
+                            <div class="title-gray-small m-10">
+
+                                Missed
+                            </div>
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar missed"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="1000"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-most-used">
+                            <div class="title-gray-small">
+                                Avg. Queue Time
+                            </div>
+                            <div class="time-elapsed" data-time="00:01:54"></div>
+                            <div class="detail-time-elapsed" data-detail="-00:00:03"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="most-used-box m-10">
+                        <div class="number-indicator">
+                            2
+                        </div>
+
+                        <div class="graphic-circular">
+                            <div class="graphic">
+                                <svg>
+                                    <circle cx="30" cy="30" r="30"></circle>
+                                    <circle class="progress" cx="30" cy="30" r="30"></circle>
+                                </svg>
+                                <div class="number-percent" data-percent="85"></div>
+                            </div>
+                        </div>
+
+                        <div class="graphic-bar-horizontal">
+                            <div class="description m-5">
+                                <div class="description-content">
+                                    <i class="bx bx-shape-circle"></i>
+                                    <p>Marketing</p>
+                                </div>
+                                <div class="description-content">
+                                    <i class="bx bx-analyse"></i>
+                                    <p>Analysis</p>
+                                </div>
+                            </div>
+
+                            <div class="title-gray-small">
+                                Accepted
+                            </div>
+
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar accepted"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="700"></p>
+                                </div>
+                            </div>
+                
+                            <div class="title-gray-small m-10">
+                                Missed
+                            </div>
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar missed"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="100"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-most-used">
+                            <div class="title-gray-small">
+                                Avg. Queue Time
+                            </div>
+                            <div class="time-elapsed" data-time="00:01:54"></div>
+                            <div class="detail-time-elapsed" data-detail="+00:00:03"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="most-used-box m-10">
+                        <div class="number-indicator">
+                            3
+                        </div>
+
+                        <div class="graphic-circular">
+                            <div class="graphic">
+                                <svg>
+                                    <circle cx="30" cy="30" r="30"></circle>
+                                    <circle class="progress" cx="30" cy="30" r="30"></circle>
+                                </svg>
+                                <div class="number-percent" data-percent="50"></div>
+                            </div>
+                        </div>
+
+                        <div class="graphic-bar-horizontal">
+                            <div class="description m-5">
+                                <div class="description-content">
+                                    <i class="bx bx-shape-circle"></i>
+                                    <p>Marketing</p>
+                                </div>
+                                <div class="description-content">
+                                    <i class="bx bx-analyse"></i>
+                                    <p>Analysis</p>
+                                </div>
+                            </div>
+
+                            <div class="title-gray-small">
+                                Accepted
+                            </div>
+
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar accepted"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="800"></p>
+                                </div>
+                            </div>
+                
+                            <div class="title-gray-small m-10">
+                                Missed
+                            </div>
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar missed"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="200"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-most-used">
+                            <div class="title-gray-small">
+                                Avg. Queue Time
+                            </div>
+                            <div class="time-elapsed" data-time="00:01:54"></div>
+                            <div class="detail-time-elapsed" data-detail="-00:00:03"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="most-used-box m-10">
+                        <div class="number-indicator">
+                            4
+                        </div>
+
+                        <div class="graphic-circular">
+                            <div class="graphic">
+                                <svg>
+                                    <circle cx="30" cy="30" r="30"></circle>
+                                    <circle class="progress" cx="30" cy="30" r="30"></circle>
+                                </svg>
+                                <div class="number-percent" data-percent="95"></div>
+                            </div>
+                        </div>
+
+                        <div class="graphic-bar-horizontal">
+                            <div class="description m-5">
+                                <div class="description-content">
+                                    <i class="bx bx-shape-circle"></i>
+                                    <p>Marketing</p>
+                                </div>
+                                <div class="description-content">
+                                    <i class="bx bx-analyse"></i>
+                                    <p>Analysis</p>
+                                </div>
+                            </div>
+
+                            <div class="title-gray-small">
+                                Accepted
+                            </div>
+
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar accepted"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="350"></p>
+                                </div>
+                            </div>
+                
+                            <div class="title-gray-small m-10">
+                                Missed
+                            </div>
+                            <div class="graphics-bar-horizontal m-10">
+                                <div class="graphic-progress"></div>
+                                <div class="bar missed"></div>
+                                <div class="number">
+                                    <p class="data-value" data-value="250"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-most-used">
+                            <div class="title-gray-small">
+                                Avg. Queue Time
+                            </div>
+                            <div class="time-elapsed" data-time="00:01:54"></div>
+                            <div class="detail-time-elapsed" data-detail="+00:00:03"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="other-items">
+                    <div class="dialogue-volume">
+                        <div class="title-gray-large">
+                            Dialogue Volume by Modality
+                        </div>
+
+                        <div class="content-volume">
+                            <div class="total m-5">
+                                Total: <span></span>
+                            </div>
+
+                            <div class="graphic-multi-bar">
+                                <div class="call" data-value="2421"></div>
+                                <div class="chat" data-value="1400"></div>
+                                <div class="email" data-value="120"></div>
+                                <div class="callme" data-value="440"></div>
+                                <div class="text" data-value="328"></div>
+                                <div class="dialer" data-value="320"></div>
+                            </div>
+
+                            <div class="legend-graphic-multi-bar">
+                                <div class="legend-content">
+                                    <div class="total"></div>
+
+                                    <div class="legend">
+                                        <i class="bx bxs-phone call-icon"></i>
+                                        <p>Call</p>
+                                    </div>
+                                </div>
+
+                                <div class="legend-content">
+                                    <div class="total"></div>
+                                    
+                                    <div class="legend">
+                                        <i class="bx bxs-chat chat-icon"></i>
+                                        <p>Chat</p>
+                                    </div>
+                                </div>
+
+                                <div class="legend-content">
+                                    <div class="total"></div>
+
+                                    <div class="legend">
+                                        <i class="bx bxs-envelope email-icon"></i>
+                                        <p>E-Mail</p>
+                                    </div>
+                                </div>
+
+                                <div class="legend-content">
+                                    <div class="total"></div>
+
+                                    <div class="legend">
+                                        <i class="bx bxs-phone-incoming callme-icon"></i>
+                                        <p>Callme</p>
+                                    </div>
+                                </div>
+
+                                <div class="legend-content">
+                                    <div class="total"></div>
+
+                                    <div class="legend">
+                                        <i class="bx bxs-message-alt-detail text-icon"></i>
+                                        <p>Text</p>
+                                    </div>
+                                </div>
+
+                                <div class="legend-content">
+                                    <div class="total"></div>
+
+                                    <div class="legend">
+                                        <i class="bx bx-dialpad dialer-icon"></i>
+                                        <p>Dialer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-license">
+                        <div class="title-gray-large">
+                            Service License Agreement by Date
+                        </div>
+
+                        <div class="graphic-line">
+                            <canvas id="line-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script language="javascript" type="text/javascript" src="script/default.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+</body>
+</html>
